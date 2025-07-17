@@ -3,7 +3,7 @@
 const { GoogleGenAI } = require("@google/genai");
 
 const ai = new GoogleGenAI({
-  apiKey: "AIzaSyCXlbIGBXuzec_D6dX-b3LkabBs7dJocmA",
+  apiKey: process.env.GOOGLE_API,
 });
 
 import { NextResponse } from "next/server";
@@ -29,7 +29,7 @@ export async function POST(req) {
     },
   });
 
-  return new NextResponse(stream, {
+  return new Response(stream, {
     headers: { "Content-Type": "text/plain" },
   });
 }
