@@ -1,8 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import { ai } from "./geminiAi";
-import { getAiResponse } from "./api/chat/route";
 
 export default function Home() {
   const [history, setHistory] = useState([
